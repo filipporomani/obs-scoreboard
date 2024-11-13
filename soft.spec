@@ -20,7 +20,6 @@ exe = EXE(
     pyz,
     a.scripts,
     a.binaries,
-    Tree('.\\templates', prefix='templates\\'),
     a.datas,
     [],
     name='main',
