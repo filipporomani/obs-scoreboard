@@ -5,27 +5,24 @@ from tkinter import Tk, Label, Entry, Button, StringVar
 import webbrowser
 from flask import Flask
 
-flask_thread_kwargs = {'host': '127.0.0.1', 'port': 5000,
-                       'threaded': True, 'use_reloader': False, 'debug': False}
+
+def do_nothing():
+    pass
+
+
+flask_thread_kwargs = {'host': '127.0.0.1', 'port': 5000, 'threaded': True, 'use_reloader': False, 'debug': False}
 
 app = Flask(__name__)
 
 data = {"nameA": "BUZZI", "nameB": "RODARI", "scoreA": 9, "scoreB": 2}
 ip = "http://127.0.0.1:5000"
 root = Tk()
-
-
-def do_nothing():
-    pass
-
-
 root.protocol("WM_DELETE_WINDOW", do_nothing)
 
 
 def set_ip():
     ip = ip_entry.get()
     port = port_entry.get()
-
 
     ip = f"http://{ip}:{port}"
     ipw.destroy()
@@ -150,6 +147,8 @@ def create_image(width, height, color1, color2):
     return image
 
 # destroy all windows
+
+
 def quit_all():
     try:
         ipw.destroy()
@@ -159,6 +158,7 @@ def quit_all():
         root.destroy()
     except:
         pass
+
 
 # tray icon
 icon = pystray.Icon(
