@@ -26,6 +26,7 @@ def set_ip():
     ip = ip_entry.get()
     port = port_entry.get()
 
+
     ip = f"http://{ip}:{port}"
     ipw.destroy()
 
